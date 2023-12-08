@@ -1,8 +1,8 @@
 version: '3'
 services:
-  keyin-fall_2023_s4_qap:
-    image: keyin/fall_2023_s4_qap:latest
+  tateys12-qap-2-s4:
+    image: tateys12/qap2s4:latest
     ports:
-      - 8080
+      - 8080:8080
     environment:
       - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/fall_2023
