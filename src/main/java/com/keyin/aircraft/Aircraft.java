@@ -1,5 +1,6 @@
 package com.keyin.aircraft;
 
+import com.keyin.airline.Airline;
 import com.keyin.airport.Airport;
 import com.keyin.passengers.Passengers;
 
@@ -13,15 +14,17 @@ public class Aircraft {
     @GeneratedValue(generator = "aircraft_sequence")
     private long id;
     private String tailNumber;
-    private String type;
-    private String brand;
-    private String model;
+
+    private boolean status;
 
     @ManyToMany
     private List<Airport> airport;
 
     @ManyToMany
     private List<Passengers> passengers;
+
+    @ManyToMany
+    private List<Airline> airline;
 
     public long getId() {
         return id;
@@ -39,27 +42,11 @@ public class Aircraft {
         this.tailNumber = tailNumber;
     }
 
-    public String getType() {
-        return type;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
